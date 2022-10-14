@@ -679,6 +679,8 @@ class PdfWriter:
         font = writer_annot.get(InteractiveFormDictEntries.DA)
         rect = writer_annot.get(AnnotationDictionaryAttributes.Rect)
         ap = writer_annot.get(AnnotationDictionaryAttributes.AP)
+        if not ap:
+            return
         n = ap.get_object().get(NameObject("/N"))
         xobj = n.get_object()
         stream = xobj.get_data()
