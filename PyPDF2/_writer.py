@@ -683,7 +683,7 @@ class PdfWriter:
         xobj = n.get_object()
         stream = xobj.get_data()
 
-        font_size = int(font.split(" ")[1])
+        font_size = int(float(font.split(" ")[1]))
         w = float(rect[2]) - float(rect[0])
         h = float(rect[3]) - float(rect[1])
         text_position_h = h / 2 - font_size / 3  # approximation
